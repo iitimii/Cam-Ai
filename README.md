@@ -22,10 +22,32 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 - How the hardware works in general (Control System, align the camera frame with that of the image)
 
 # Backend Description
-- Why the need for a backend system?
-- Describe the system design you used.
-- Describe the tools you used
-- Describe how someone can execute the code if they wish
-- Post a snippet of it working
-- Post recommendations for someone who wants to take it further
+- The system was created to stream the footage from the raspberry pi onto a client facing web application.
 
+### System Working Principle
+- A persistent connection was created using sockets, to link the server with the raspberry pi.
+- The pi transmitts the data, which was encoded using OpenCV
+- The footage was then converted to a moving jpeg format and streamed on the frontend.
+  
+### Tools Required
+- Flask: To create the server
+- Numpy and NumpySockets: To create a persistent link between the respberry pi and our local server, through which the footage would be streamed
+  
+### Project Run Instructions
+- To setup the project, run the following:
+  ```
+  pip install flask
+  pip install opencv-python
+  pip install numpy
+  pip install numpysocket
+  ```
+- To launch the web application
+  ```
+  python3 main.py
+  ```
+  ![Home page](home.png)
+  ![Working model](./web-screenshot.jpg)
+
+### Project Recommendations
+- Add servo control to web application. Avoid lag
+- Fater streaming. Increase FPS
