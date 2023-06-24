@@ -5,7 +5,6 @@ import mediapipe as mp
 import tensorflow.lite as lite
 from picamera2 import Picamera2
 from pantilthat import pan, tilt
-#import time
 
 SEQ_LEN = 10
 
@@ -17,29 +16,34 @@ CLASSES_LIST =  ['Fall Down',
  'Standing',
  'Sitting',
  'Chest Pain',
- 'Coughing',']
+ 'Coughing']
 
-TF_LITE_MODEL_NAME = 'final_model.tflite
+TF_LITE_MODEL_NAME = 'final_model.tflite'
 
 interpreter = lite.Interpreter(TF_LITE_MODEL_NAME)
 
 x = 0
 y = 0
-dx = 3
-dy = 1.5
-prev_time = 0
+dx = 2
+dy = 2
+
+center_x = 360
+center_y = 120
+threshold_x = 100
+threshold_y = 40
 
 pan(0)
 tilt(0)
 
 
 mp_pose = mp.solutions.pose
-pose = mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.65, min_tracking_confidence=0.5, model_complexity=1)
+pose = mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.7, min_tracking_confidence=0.5, model_complexity=1)
 mp_draw = mp.solutions.drawing_utils
 
 
 pan(x)
 tilt(y)
+
  
 
 
@@ -50,6 +54,35 @@ def tflite_predict(X, interpreter):
     interpreter.invoke()
     predictions = interpreter.get_tensor(interpreter.get_output_details()[0]['index'])
     return predictions
+    
+
+    
+    
+def track_control(results, frame, x, y, w, h, reset):
+    if results.pose_landmarks:
+        reset = 0
+        
+        lm = results.pose_landmarks.landmark[0]
+        cx, cy = int(lm.x*w), int(lm.y*h)
+        cv2.circle(frame, (cx,cy), 7, (255, 0, 0), cv2.FILLED)
+        
+        if cx>(center_x + threshold_x) and x<85:
+            x+=dx
+    
+        if cx<(center_x - threshold_x) and x>-85:
+            x-=dx
+        
+        if cy<(center_y - threshold_y) and y>-85:
+            y-=dy
+     
+        if cy>(center_y + threshold_y) and y<85:
+            y+=dy
+    else:
+        reset+=1
+    return frame, x, y, reset
+
+    
+    
 
 
 def pred_video(interpreter, SEQUENCE_LENGTH=SEQ_LEN):
@@ -69,39 +102,62 @@ def pred_video(interpreter, SEQUENCE_LENGTH=SEQ_LEN):
     cx =0
     cy = 0
     reset = 0
+    mode = 'track'
     
     frames_queue = deque(maxlen = SEQUENCE_LENGTH)
-    predicted_class_name = ''
+    global predicted_class_name = ''
     while True:
+        key_pressed = cv2.waitKey(1)
         frame = piCam.capture_array()
         frame = cv2.flip(frame, 0)
         
         h,w,c = frame.shape
 
+        #frame = cv2.resize(frame, (256, 256))
+
         results = pose.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
         
-        if results.pose_landmarks:
-        
-            lm = results.pose_landmarks.landmark[0]
-            cx, cy = int(lm.x*w), int(lm.y*h)
-            cv2.circle(frame, (cx,cy), 7, (255, 0, 0), cv2.FILLED)
-        
-            if cx>430 and x<85:
-                x+=dx
-    
-            if cx<290 and x>-85:
+        ######## keyboard or track control
+        if mode == 'track':
+            frame, x, y, reset = track_control(results, frame, x, y, w, h, reset)
+            cv2.putText(frame, "press 'k' for keyboard control", (220, 470), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+
+            
+        if mode == 'keyboard':
+            reset = 0
+            if key_pressed== ord('a') and x>-85:
                 x-=dx
-        
-            if cy<100 and y>-85:
-                y-=dy
     
-            if cy>180 and y<85:
+            elif key_pressed== ord('d') and x<85:
+                x+=dx
+        
+            elif key_pressed== ord('s') and y<85:
                 y+=dy
-        else:
-            reset+=1
-            if reset > 40:
-                x=0
-                y=30
+     
+            elif key_pressed== ord('w') and y>-85:
+                y-=dy
+                
+            cv2.putText(frame, "w-up", (580, 270), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            cv2.putText(frame, "s-down", (580, 310), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            cv2.putText(frame, "a-left", (580, 350), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            cv2.putText(frame, "d-right", (580, 390), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            
+            cv2.putText(frame, "press 't' for AI tracking", (320, 470), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+            
+        if reset == 40:
+            x=0
+            y=18
+            
+        if reset > 45:
+            if x<85:
+                x+=(dx*0.5)
+            if x>=85:
+                x=-85
+            if y<30:
+                y+=(dy*0.2)
+            if y>=30:
+                y=10
+            
             
         pan(x)
         tilt(y) 
@@ -122,14 +178,24 @@ def pred_video(interpreter, SEQUENCE_LENGTH=SEQ_LEN):
             predicted_class_name = CLASSES_LIST[predicted_label]
 
 
-        cv2.putText(frame, predicted_class_name, (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 5) if results.pose_landmarks else cv2.putText(frame, 'No Action', (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 5)
-
+        cv2.putText(frame, predicted_class_name, (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 4) if results.pose_landmarks else cv2.putText(frame, 'No Action', (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 255, 255), 5)
+        cv2.putText(frame, "press 'q' to exit", (420, 440), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
         cv2.imshow('frame', frame)
-
-        if cv2.waitKey(1)== ord('q'):
+        
+        
+        if key_pressed== ord('q'):
             cv2.destroyAllWindows()
             break
+        
+        if key_pressed== ord('k'):
+            mode = 'keyboard'
+            
+        if key_pressed== ord('t'):
+            mode = 'track'
+            
+        
 
+        
     
 
 
