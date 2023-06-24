@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
+
+    <title>Health Surveillance System</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="head">
+            <h1><a href="/">HSS</a></h1>
+            <p>Health Surveillance System</p>
+        </div>
+
+        <ul>
+            <li><a href="/stream">Livestream</a></li>
+        </ul>
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

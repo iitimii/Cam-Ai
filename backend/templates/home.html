@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<div class="hero">
+    <div class="backdrop">
+        <div class="hero-text">
+            <h1>Monitor the Health of your Loved Ones and Patients in Real Time.</h1>
+            <p>Get immediately notified when a situation arises.</p>
+    
+            <br>
+
+            <button>
+                <a href="/stream">Live Stream</a>
+            </button>
+        </div>
+            
+    </div>
+    
+    <img src={{ url_for('static', filename='old-lady.svg') }} alt="" class="lady">
+
+</div>
+
+<footer>ELELE EZINNE 18CK024201</footer>
+
+{% endblock %}
