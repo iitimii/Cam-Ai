@@ -9,7 +9,7 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 
 # Model System Design
 - The problem
-- Choosing the model. Why LSTM?
+- The LSTM model was chosen because it could take into account the sequential order of the predicted landmarks to be used for prediction
 - Getting the Data
 - Exploratory Data Analysis (Getting the video, No of Frames, No of Counts ...)
 - Choosing Tensorflow vs Pytorch
@@ -50,4 +50,4 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 
 ### Project Recommendations
 - Add servo control to web application. Avoid lag
-- Fater streaming. Increase FPS
+- Faster streaming. Increase FPS
