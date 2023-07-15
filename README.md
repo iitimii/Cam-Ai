@@ -38,10 +38,9 @@ Scanning for people
 https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/fbe3ab50-2b20-4c9b-9543-cf6987a58dfc
 
 
-- Recommendations to improve the project or the model
 
 # Hardware
-- How the hardware works in general (Control System, align the camera frame with that of the image)
+- The pan-tilt hat camera centers a subject by minimizing the error between the nose of the subject and the center of the screen
 
 # Backend Description
 - The system was created to stream the footage from the raspberry pi onto a client-facing web application.
