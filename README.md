@@ -22,6 +22,9 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 
 - Describe how someone can use the code
 - Post a snippet of it working
+
+- ![73DD1D01-7C04-4EA9-ACD4-CEF20F1A3A69_1_102_o](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/687498f3-eb18-4aac-a786-e786df81538d)
+
 - Recommendations to improve the project or the model
 
 # Hardware
