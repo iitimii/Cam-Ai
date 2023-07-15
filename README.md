@@ -26,7 +26,11 @@ https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/
 
 
 The model struggles with standing and walking
-https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a616b7d8-5cc7-42b8-bdff-5654c0ada7ca
+
+
+https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a0121018-6a20-448e-89c3-6228e23cdeaa
+
+
 
 
 Scanning for people
