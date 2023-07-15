@@ -11,11 +11,14 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 - The system is designed to monitor the actions of a patient
 - Mediapipe was used to extract the landmarks from the video frames 
 - The LSTM model was chosen because it could take into account the sequential order of the predicted landmarks to be used for prediction
-- The LSTM model uses a sequence of ten successive frames to determine the patients action
-- Tensorflow is faster for creating small models for small projects like this that’s why it was chosen as the deep learning engine
+- The LSTM model uses a sequence of ten successive frames to determine the patient's action
+- TensorFlow is faster for creating small models for small projects like this that’s why it was chosen as the deep learning engine
 ![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/b2c35307-8bd2-4397-8cec-865dc3f9431d)
 
 ![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/eb922d3a-422a-43fd-96d0-6b33a544aaee)
+
+![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/b7ccef6f-055a-4deb-8443-e659c45c9908)
+
 
 - Describe how someone can use the code
 - Post a snippet of it working
