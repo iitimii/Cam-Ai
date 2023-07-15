@@ -22,19 +22,19 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 - How the hardware works in general (Control System, align the camera frame with that of the image)
 
 # Backend Description
-- The system was created to stream the footage from the raspberry pi onto a client facing web application.
+- The system was created to stream the footage from the raspberry pi onto a client-facing web application.
 
 ### System Working Principle
 - A persistent connection was created using sockets, to link the server with the raspberry pi.
-- The pi transmitts the data, which was encoded using OpenCV
+- The pi transmits the data, which was encoded using OpenCV
 - The footage was then converted to a moving jpeg format and streamed on the frontend.
   
 ### Tools Required
 - Flask: To create the server
-- Numpy and NumpySockets: To create a persistent link between the respberry pi and our local server, through which the footage would be streamed
+- Numpy and NumpySockets: To create a persistent link between the raspberry pi and our local server, through which the footage would be streamed
   
 ### Project Run Instructions
-- To setup the project, run the following:
+- To set up the project, run the following:
   ```
   pip install flask
   pip install opencv-python
@@ -49,5 +49,5 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
   ![Working model](./web-screenshot.jpg)
 
 ### Project Recommendations
-- Add servo control to web application. Avoid lag
+- Add servo control to the web application. Avoid lag
 - Faster streaming. Increase FPS
