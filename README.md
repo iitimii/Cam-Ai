@@ -40,7 +40,7 @@ https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/
 
 
 # Hardware
-- The pan-tilt hat camera centers a subject by minimizing the error between the nose of the subject and the center of the screen
+- The pan-tilt hat camera centers a subject by minimizing the error between the nose of the subject and the center of the screen using a bang-bang controller (using a fixed control response)
 
 # Backend Description
 - The system was created to stream the footage from the raspberry pi onto a client-facing web application.
