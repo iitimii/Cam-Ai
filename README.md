@@ -20,18 +20,9 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 ![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/b7ccef6f-055a-4deb-8443-e659c45c9908)
 
 
-- Describe how someone can use the code
+- Description on how someone can use the code
 
 https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a167cb20-c324-4fc2-b70b-95f00f128698
-
-
-The model struggles with standing and walking
-
-
-https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a0121018-6a20-448e-89c3-6228e23cdeaa
-
-
-
 
 Scanning for people
 
@@ -72,3 +63,6 @@ https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/
 ### Project Recommendations
 - Add servo control to the web application. Avoid lag
 - Faster streaming. Increase FPS
+- Training with more data as the model struggles with standing and walking
+https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a0121018-6a20-448e-89c3-6228e23cdeaa
+
