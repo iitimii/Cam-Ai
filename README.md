@@ -7,12 +7,12 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a167cb20-c324-4fc2-b70b-95f00f128698
 
 # Hardware
-The hardware is a Pimoroni pan-tilt hat camera with an onboard microcontroller which lets you independently drive the two servos (pan and tilt). The module pans and tilts through 180 degrees on each axis and is compatible with all 40-pin header Raspberry Pi models.
+The hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoroni.com/products/pan-tilt-hat?variant=22408353287) with an onboard microcontroller which lets you independently drive the two servos (pan and tilt). The module pans and tilts through 180 degrees on each axis and is compatible with all 40-pin header Raspberry Pi models.
 
 <img width="454" alt="Screenshot 2023-07-23 at 01 22 09" src="https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/44223263/7430d87b-722b-434a-8158-15253fff86fa">
 
 # General Overview
-- TheCenters a subject by minimizing the error between the nose of the subject and the center of the screen using a bang-bang controller (using a fixed control response)
+- The pan-tilt camera centers on a subject by controlling the servos to minimize the error between the nose of the subject and the center of the camera's view using a bang-bang controller.
 - From Dataset to Mediapipe to LSTM to Action State
 - 
 
@@ -61,5 +61,6 @@ The backend handles the streaming of the footage from the Raspberry Pi onto a cl
 - Add servo control to the web application.
 - Faster streaming. Increase FPS to avoid lag.
 - Training with more data as the model struggles with standing and walking
+
 https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a0121018-6a20-448e-89c3-6228e23cdeaa
 
