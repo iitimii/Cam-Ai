@@ -4,6 +4,10 @@
 
 Innovative healthcare solutions are characterized as being non-invasive, affordable, having reduced response time, and easing the burden on caregivers for the elderly and individuals requiring continual care. This innovative project provides real-time monitoring and action state feedback on the state of medical patients. 
 
+# System in Action
+https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a167cb20-c324-4fc2-b70b-95f00f128698
+
+
 # General Overview
 - From Dataset to Mediapipe to LSTM to Action State
 
@@ -20,17 +24,6 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 ![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/eb922d3a-422a-43fd-96d0-6b33a544aaee)
 
 ![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/b7ccef6f-055a-4deb-8443-e659c45c9908)
-
-
-- Description on how someone can use the code
-
-https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a167cb20-c324-4fc2-b70b-95f00f128698
-
-Scanning for people
-
-https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/fbe3ab50-2b20-4c9b-9543-cf6987a58dfc
-
-
 
 # Hardware
 - The pan-tilt hat camera centers a subject by minimizing the error between the nose of the subject and the center of the screen using a bang-bang controller (using a fixed control response)
