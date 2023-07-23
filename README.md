@@ -6,9 +6,15 @@ Innovative healthcare solutions are characterized as being non-invasive, afforda
 
 https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a167cb20-c324-4fc2-b70b-95f00f128698
 
+# Hardware
+- The hardware is a Pimoroni pan-tilt hat camera with an onboard microcontroller which lets you independently drive the two servos (pan and tilt). The module pans and tilts through 180 degrees on each axis and is compatible with all 40-pin header Raspberry Pi models.
+
+<img width="454" alt="Screenshot 2023-07-23 at 01 22 09" src="https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/44223263/7430d87b-722b-434a-8158-15253fff86fa">
 
 # General Overview
+- TheCenters a subject by minimizing the error between the nose of the subject and the center of the screen using a bang-bang controller (using a fixed control response)
 - From Dataset to Mediapipe to LSTM to Action State
+- 
 
 # Model System Design
 - The system is designed to monitor the actions of a patient
@@ -24,18 +30,15 @@ https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/
 
 ![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/b7ccef6f-055a-4deb-8443-e659c45c9908)
 
-# Hardware
-- The pan-tilt hat camera centers a subject by minimizing the error between the nose of the subject and the center of the screen using a bang-bang controller (using a fixed control response)
-
 # Backend Description
 The backend handles the streaming of the footage from the Raspberry Pi onto a client-facing web application.
 
-### System Working Principle
-- A persistent connection was created using sockets, to link the server with the raspberry pi.
-- The pi transmits the data, which was encoded using OpenCV
-- The footage was then converted to a moving jpeg format and streamed on the frontend.
+### Backend Working Principle
+- A persistent connection was created using sockets, to link the server with the Raspberry Pi.
+- The pi transmits the data, which is encoded using OpenCV
+- The footage was then converted to a moving jpeg format and streamed on the front end.
   
-### Tools Required
+### Tools Required for the Backend
 - Flask: To create the server
 - Numpy and NumpySockets: To create a persistent link between the raspberry pi and our local server, through which the footage would be streamed
   
@@ -54,9 +57,9 @@ The backend handles the streaming of the footage from the Raspberry Pi onto a cl
   ![Home page](home.png)
   ![Working model](./web-screenshot.jpg)
 
-### Project Recommendations
-- Add servo control to the web application. Avoid lag
-- Faster streaming. Increase FPS
+# Recommendations
+- Add servo control to the web application.
+- Faster streaming. Increase FPS to avoid lag.
 - Training with more data as the model struggles with standing and walking
 https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a0121018-6a20-448e-89c3-6228e23cdeaa
 
