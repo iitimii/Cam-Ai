@@ -54,7 +54,7 @@ The backend handles the streaming of the footage from the Raspberry Pi onto a cl
   ![Home page](home.png)
   ![Working model](./web-screenshot.jpg)
 
-### Project Run Instructions
+
 #### To run the program without the web app:
 - Transfer the ```run.py``` file to the raspberry pi using the ```scp``` comand (secure copy)
 - ```scp <source-file> <user>@<host_ip_address>:<path> ```
