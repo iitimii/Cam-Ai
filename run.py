@@ -18,7 +18,7 @@ CLASSES_LIST =  ['Fall Down',
  'Chest Pain',
  'Coughing']
 
-TF_LITE_MODEL_NAME = 'final_model.tflite'
+TF_LITE_MODEL_NAME = 'AI/models/final_model.tflite'
 
 interpreter = lite.Interpreter(TF_LITE_MODEL_NAME)
 
