@@ -27,12 +27,6 @@ The hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoroni.com/produ
 - Val_Loss: 0.8967
 - Val_Accuracy: 0.6873
 
-![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/b2c35307-8bd2-4397-8cec-865dc3f9431d)
-
-![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/eb922d3a-422a-43fd-96d0-6b33a544aaee)
-
-![image](https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/b7ccef6f-055a-4deb-8443-e659c45c9908)
-
 # Backend Description
 The backend handles the streaming of the footage from the Raspberry Pi onto a client-facing web application.
 
