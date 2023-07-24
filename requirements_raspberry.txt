@@ -1,7 +1,7 @@
 numpy
 cv2
 mediapipe
-tensorflow.lite 
+tensorflow
 picamera2 
 pantilthat
 flask
