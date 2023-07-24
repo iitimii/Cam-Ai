@@ -21,7 +21,7 @@ The hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoroni.com/produ
 - TensorFlow is faster for creating small models for small projects like this that’s why it was chosen as the deep learning engine
 
 # Model Results
-- The model achieved the following results
+- The LSTM model achieved the following results
 - Loss: 0.5894
 - Accuracy: 0.7817
 - Val_Loss: 0.8967
@@ -55,7 +55,7 @@ The backend handles the streaming of the footage from the Raspberry Pi onto a cl
   ![Working model](./web-screenshot.jpg)
 
 ### Project Run Instructions
-- To run the program without the web app:
+#### To run the program without the web app:
 - Transfer the ```run.py``` file to the raspberry pi using the ```scp``` comand (secure copy)
 - ```scp <source-file> <user>@<host_ip_address>:<path> ```
 - run the ```run.py``` file on the raspberry pi
