@@ -1,5 +1,5 @@
 numpy
-cv2
+opencv-python
 mediapipe
 tensorflow
 picamera2 

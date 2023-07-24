@@ -1,0 +1,7 @@
+numpy
+mediapipe
+picamera2 
+pantilthat
+flask
+numpysocket
+opencv-python
