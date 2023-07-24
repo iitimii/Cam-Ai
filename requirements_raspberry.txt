@@ -1,0 +1,7 @@
+numpy
+cv2
+mediapipe
+tensorflow.lite 
+picamera2 
+pantilthat
+flask
