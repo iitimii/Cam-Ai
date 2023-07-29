@@ -28,12 +28,12 @@ The hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoroni.com/produ
 - Val_Accuracy: 0.6873
 
 # Backend Description
-The backend handles the streaming of the footage from the Raspberry Pi onto a client-facing web application.
+The backend handles the footage streaming from the Raspberry Pi onto a client-facing web application.
 
 ### Backend Working Principle
-- A persistent connection was created using sockets, to link the server with the Raspberry Pi.
+- A persistent connection is created using sockets, to link the server with the Raspberry Pi.
 - The pi transmits the data, which is encoded using OpenCV
-- The footage was then converted to a moving jpeg format and streamed on the front end.
+- The footage is then converted to a moving jpeg format and streamed on the front end.
   
 ### Tools Required for the Backend
 - Flask: To create the server
@@ -51,8 +51,8 @@ The backend handles the streaming of the footage from the Raspberry Pi onto a cl
   ```
   python3 main.py
   ```
-  ![Home page](home.png)
-  ![Working model](./web-screenshot.jpg)
+  ![Home page](./images/home.png)
+  ![Working model](./images/web-screenshot.jpg)
 
 
 #### To run the program without the web app:
