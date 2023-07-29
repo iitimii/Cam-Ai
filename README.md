@@ -1,7 +1,6 @@
-# AI tracking Camera with Action Recognition
+# CamAI
 
-# Project Description
-Welcome to a groundbreaking project that marries cutting-edge artificial intelligence (AI) with conventional camera technology, bringing about a remarkable transformation in how we perceive and interact with the world. Our AI Camera with Real-Time Action Recognition is powered by  AI algorithms that elevate its capabilities to a whole new level.
+CamAI marries cutting-edge artificial intelligence (AI) with conventional camera technology, bringing about a remarkable transformation in how we perceive and interact with the world. Our AI Camera with Real-Time Action Recognition is powered by  AI algorithms that elevate its capabilities to a whole new level.
 
 By harnessing the potential of AI, our camera becomes more than just a passive observer. It actively comprehends and interprets human actions and movements in real time. From discerning basic actions like walking and running to identifying complex gestures, this camera offers a deeper understanding of human behavior.
 
@@ -19,7 +18,7 @@ The applications of our AI Camera with Real-Time Action Recognition are diverse 
 https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a167cb20-c324-4fc2-b70b-95f00f128698
 
 # Hardware
-The hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoroni.com/products/pan-tilt-hat?variant=22408353287) with an onboard microcontroller which lets you independently drive the two servos (pan and tilt). The module pans and tilts through 180 degrees on each axis and is compatible with all 40-pin header Raspberry Pi models.
+For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoroni.com/products/pan-tilt-hat?variant=22408353287) with an onboard microcontroller which lets you independently drive the two servos (pan and tilt). The module pans and tilts through 180 degrees on each axis and is compatible with all 40-pin header Raspberry Pi models.
 
 <img width="454" alt="Screenshot 2023-07-23 at 01 22 09" src="https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/44223263/7430d87b-722b-434a-8158-15253fff86fa">
 
