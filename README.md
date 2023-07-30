@@ -30,6 +30,8 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
   - Get the dataset (Videos of actions you want to predict)
   - Select 10 frames, equally spaced across the entire span of the video
   - Pass the frames through the mediapipe pose model to extract the pose landmarks
+  - Save the landmarks and labels in a numpy array
+  - Link to dataset: https://drive.google.com/drive/folders/1BNY_yB6iyl3XRVcGnUsGTlAjRyRc3ul2?usp=drive_link
 
 
 - Training
@@ -95,6 +97,5 @@ The backend handles the footage streaming from the Raspberry Pi onto a client-fa
 - Add servo control to the web application.
 - Faster streaming. Increase FPS to avoid lag.
 - Training with more data as the model struggles with standing and walking
-
-https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a0121018-6a20-448e-89c3-6228e23cdeaa
+- Add more actions to the model
 
