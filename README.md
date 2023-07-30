@@ -51,7 +51,22 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
   - Get the classified result and print on the video feed
 
 - Tracking
-  - The pan-tilt camera centers on a subject by controlling the servos to minimize the error between the nose of the subject and the center of the camera's view using a bang-bang controller.
+  - There are two tracking modes
+  1) AI tracking
+    - Switch to this mode by clicking "t"
+    - The system uses the mediapipe pose model to identify the nose of the subject
+    - The pan-tilt camera centers on the subject by controlling the servos to minimize the error between the nose of the subject and the center of the camera's view using a bang-bang controller.
+  - 2) Keyboard control tracking
+       - Switch to this mode by clicking "k"
+       - The system uses keyboard inputs to control the pan-tilt camera
+       - "w" - up
+       - "s" - down
+       - "a" - left
+       - "d" - right
+   
+  - Here is a video showing first the keyboard control tracking which is then swicthed to AI tracking:
+    
+    https://github.com/iitimii/Cam-Ai/blob/main/videos/tracking%20video.mp4
 
 ## Model Results
 - The LSTM model achieved the following results
