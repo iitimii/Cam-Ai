@@ -66,7 +66,8 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
    
   - Here is a video showing first the keyboard control tracking which is then swicthed to AI tracking:
 
-https://github.com/iitimii/Cam-Ai/blob/main/videos/tracking%20video.mp4
+https://github.com/iitimii/Cam-Ai/assets/106264110/efa98629-38f4-4e97-a09c-19553250e981
+
 
 ## Model Results
 - The LSTM model achieved the following results
