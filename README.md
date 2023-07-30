@@ -98,4 +98,3 @@ The backend handles the footage streaming from the Raspberry Pi onto a client-fa
 - Faster streaming. Increase FPS to avoid lag.
 - Training with more data as the model struggles with standing and walking
 - Add more actions to the model
-
