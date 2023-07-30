@@ -1,4 +1,4 @@
-# CamAI
+# Action Recognition with Raspberry Pi and Pimoroni Pan-Tilt HAT Camera
 
 CamAI marries cutting-edge artificial intelligence (AI) with conventional camera technology, bringing about a remarkable transformation in how we perceive and interact with the world. Our AI Camera with Real-Time Action Recognition is powered by  AI algorithms that elevate its capabilities to a whole new level.
 
