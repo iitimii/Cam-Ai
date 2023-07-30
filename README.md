@@ -25,13 +25,23 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
 ## System Design 
 ![flow](./images/graph.jpg)
 
-- Training
+- Landmark Extraction
+  - ```AI/extract.ipynb```
   - Get the dataset (Videos of actions you want to predict)
   - Select 10 frames, equally spaced across the entire span of the video
-  - Pass the frames through media pipe to extract important landmarks
-  - Using the landmarks, train an LSTM model along with the label of the action in the video (Data format should be [10 * h * w * c], where h = height, w = width, c = channel of the frame)
+  - Pass the frames through the mediapipe pose model to extract the pose landmarks
+
+
+- Training
+  - ```AI/train.ipynb```
+  - Using the extracted landmarks, train an LSTM model along with the label of the action in the video (Data format should be [10 * h * w * c], where h = height, w = width, c = channel of the frame)
+
+- Model Conversion
+  - ```AI/tf_lite_convert.ipynb```
+  - Convert the trained model to a tflite model to reduce the size of the model and computational costs
 
 - Testing
+  - ```AI/test.ipynb```
   - Get the video feed from any camera
   - Stack 10 frames per time in a queue (which will always be updated with an incoming frame)
   - Pass the data in the queue through media pipe to extract important landmarks 
