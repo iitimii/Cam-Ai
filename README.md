@@ -1,4 +1,4 @@
-# Action Recognition with Raspberry Pi and Pimoroni Pan-Tilt HAT Camera
+# CamAI
 
 CamAI marries cutting-edge artificial intelligence (AI) with conventional camera technology, bringing about a remarkable transformation in how we perceive and interact with the world. Our AI Camera with Real-Time Action Recognition is powered by  AI algorithms that elevate its capabilities to a whole new level.
 
@@ -29,8 +29,8 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
   - ```AI/extract.ipynb```
   - Get the dataset (Videos of actions you want to predict)
   - Select 10 frames, equally spaced across the entire span of the video
-  - Pass the frames through the mediapipe pose model to extract the pose landmarks
-  - Save the landmarks and labels in a numpy array
+  - Pass the frames through the media pipe pose model to extract the pose landmarks
+  - Save the landmarks and labels in a NumPy array
   - Link to dataset: https://drive.google.com/drive/folders/1BNY_yB6iyl3XRVcGnUsGTlAjRyRc3ul2?usp=drive_link
 
 
@@ -48,13 +48,13 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
   - Stack 10 frames per time in a queue (which will always be updated with an incoming frame)
   - Pass the data in the queue through media pipe to extract important landmarks 
   - Pass the landmarks through the trained model
-  - Get the classified result and print on the video feed
+  - Get the classified result and print it on the video feed
 
 - Tracking
   - There are two tracking modes
   - 1) AI tracking
        - Switch to this mode by clicking "t"
-       - The system uses the mediapipe pose model to identify the nose of the subject
+       - The system uses the media pipe pose model to identify the nose of the subject
        - The pan-tilt camera centers on the subject by controlling the servos to minimize the error between the nose of the subject and the center of the camera's view using a bang-bang controller.
   - 2) Keyboard control tracking
        - Switch to this mode by clicking "k"
@@ -64,7 +64,7 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
        - "a" - left
        - "d" - right
    
-- Here is a video showing first the keyboard control tracking which is then swicthed to AI tracking:
+- Here is a video showing first the keyboard control tracking which is then switched to AI tracking:
 
 https://github.com/iitimii/Cam-Ai/assets/106264110/efa98629-38f4-4e97-a09c-19553250e981
 
