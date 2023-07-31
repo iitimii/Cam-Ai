@@ -1,4 +1,4 @@
-# CamAI
+# Action Recognition with Raspberry Pi and Pimoroni Pan-Tilt HAT Camera
 
 CamAI marries cutting-edge artificial intelligence (AI) with conventional camera technology, bringing about a remarkable transformation in how we perceive and interact with the world. Our AI Camera with Real-Time Action Recognition is powered by  AI algorithms that elevate its capabilities to a whole new level.
 
@@ -25,13 +25,25 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
 ## System Design 
 ![flow](./images/graph.jpg)
 
-- Training
+- Landmark Extraction
+  - ```AI/extract.ipynb```
   - Get the dataset (Videos of actions you want to predict)
   - Select 10 frames, equally spaced across the entire span of the video
-  - Pass the frames through media pipe to extract important landmarks
-  - Using the landmarks, train an LSTM model along with the label of the action in the video (Data format should be [10 * h * w * c], where h = height, w = width, c = channel of the frame)
+  - Pass the frames through the mediapipe pose model to extract the pose landmarks
+  - Save the landmarks and labels in a numpy array
+  - Link to dataset: https://drive.google.com/drive/folders/1BNY_yB6iyl3XRVcGnUsGTlAjRyRc3ul2?usp=drive_link
+
+
+- Training
+  - ```AI/train.ipynb```
+  - Using the extracted landmarks, train an LSTM model along with the label of the action in the video (Data format should be [10 * h * w * c], where h = height, w = width, c = channel of the frame)
+
+- Model Conversion
+  - ```AI/tf_lite_convert.ipynb```
+  - Convert the trained model to a tflite model to reduce the size of the model and computational costs
 
 - Testing
+  - ```AI/test.ipynb```
   - Get the video feed from any camera
   - Stack 10 frames per time in a queue (which will always be updated with an incoming frame)
   - Pass the data in the queue through media pipe to extract important landmarks 
@@ -39,7 +51,23 @@ For a test, the hardware is a [Pimoroni pan-tilt hat camera](https://shop.pimoro
   - Get the classified result and print on the video feed
 
 - Tracking
-  - The pan-tilt camera centers on a subject by controlling the servos to minimize the error between the nose of the subject and the center of the camera's view using a bang-bang controller.
+  - There are two tracking modes
+  - 1) AI tracking
+       - Switch to this mode by clicking "t"
+       - The system uses the mediapipe pose model to identify the nose of the subject
+       - The pan-tilt camera centers on the subject by controlling the servos to minimize the error between the nose of the subject and the center of the camera's view using a bang-bang controller.
+  - 2) Keyboard control tracking
+       - Switch to this mode by clicking "k"
+       - The system uses keyboard inputs to control the pan-tilt camera
+       - "w" - up
+       - "s" - down
+       - "a" - left
+       - "d" - right
+   
+- Here is a video showing first the keyboard control tracking which is then swicthed to AI tracking:
+
+https://github.com/iitimii/Cam-Ai/assets/106264110/efa98629-38f4-4e97-a09c-19553250e981
+
 
 ## Model Results
 - The LSTM model achieved the following results
@@ -85,6 +113,4 @@ The backend handles the footage streaming from the Raspberry Pi onto a client-fa
 - Add servo control to the web application.
 - Faster streaming. Increase FPS to avoid lag.
 - Training with more data as the model struggles with standing and walking
-
-https://github.com/iitimii/Raspberry-Pi-Tracking-Camera-plus-Action-Recognition/assets/106264110/a0121018-6a20-448e-89c3-6228e23cdeaa
-
+- Add more actions to the model
