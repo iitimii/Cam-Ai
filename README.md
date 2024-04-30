@@ -77,16 +77,16 @@ https://github.com/iitimii/Cam-Ai/assets/106264110/efa98629-38f4-4e97-a09c-19553
 - Val_Accuracy: 0.6873
 
 ## Backend Description
-The backend handles the footage streaming from the Raspberry Pi onto a client-facing web application.
+The backend was written in python. It's main function is to accept footage streaming from the Raspberry Pi and display it on a client-facing web application.
 
 ### Backend Working Principle
-- A persistent connection is created using sockets, to link the server with the Raspberry Pi.
-- The pi transmits the data, which is encoded using OpenCV
+- A persistent connection is created using sockets. This links the backend server with the Raspberry Pi.
+- The pi transmits the data, which is encoded using OpenCV.
 - The footage is then converted to a moving jpeg format and streamed on the front end.
   
 ### Tools Required for the Backend
-- Flask: To create the server
-- Numpy and NumpySockets: To create a persistent link between the raspberry pi and our local server, through which the footage would be streamed
+- Flask: Flask is a micro web framework written in Python. In this case, it was used to create the web application that would accept the streaming data from the Raspberry Pi. Also, it handled the conversion to moving jpeg and subsequent display on the simple frontend.
+- Numpy and NumpySockets: These were used to create a persistent link between the raspberry pi and our local server, through which the footage would be streamed.
   
 ### Project Run Instructions
 - To set up the project, run the following:
@@ -102,6 +102,11 @@ The backend handles the footage streaming from the Raspberry Pi onto a client-fa
   ```
   ![Home page](./images/home.png)
   ![Working model](./images/web-screenshot.jpg)
+
+### Recommendations for Future Backend Implementation
+- Adding support for notifications which would be triggered when certain actions are inferred.
+- Consider re-implementing using FastAPI, as it is known for it's speed, type-safety (owing to the Pydantic library) and fast-growing community. Furthermore, shares Flask's design philosophy and allows the developer flexibility during implementation (It is unopinionated).
+- Create users and handle support for device-user linkages (one user to one device), and multi-user monitoring (from multiple cameras).
 
 
 #### To run the program without the web app:
