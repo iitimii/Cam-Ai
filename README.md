@@ -105,7 +105,7 @@ The backend was written in python. It's main function is to accept footage strea
 
 ### Recommendations for Future Backend Implementation
 - Adding support for notifications which would be triggered when certain actions are inferred.
-- Consider re-implementing using FastAPI, as it is known for it's speed, type-safety (owing to the Pydantic library) and fast-growing community. Furthermore, shares Flask's design philosophy and allows the developer flexibility during implementation (It is unopinionated).
+- Consider re-implementing using FastAPI, as it is known for it's speed, type-safety (owing to the Pydantic library) and fast-growing community. Furthermore, shares Flask's design philosophy and allows the developer flexibility during implementation.
 - Create users and handle support for device-user linkages (one user to one device), and multi-user monitoring (from multiple cameras).
 
 
